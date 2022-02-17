@@ -1,0 +1,139 @@
+
+Redo this Summary
+
+List of CSS Summary
+See Project Folders and Broken Files for Progression Ideas of CSS
+Three ways of writing CSS
+1. Inline, Style
+2. Style, #, ID
+3. .css file (IDs and Classes)
+   <link href="[URL][File.Extension]" type="text/css" rel="stylesheet">
+The one tag you need
+- <div></div>
+- CAUTION: to be able to see DIVs, use border properties
+  Note: 1, 2, or 4 word combination, border-width includes px
+  border-style: none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit;
+    Caution: groove|ridge|inset|outset depend on border-color value
+  border-width: medium|thin|thick|length|initial|inherit;
+  border-color: color|transparent|initial|inherit;
+  
+  Short-hand: border: [style, thickness, and color] /* in that order */
+                      [thickness, style, and color] /* which one is correct */
+    Note: eliminates bloat code, or individually setting each property
+  
+  border-radius: 1-4 length|% / 1-4 length|%|initial|inherit;
+
+Creating a CSS Legend
+Note about CSS Layout, a Legend, for what is in a project folder
+- Create a Legend of what CSS you would like
+- What does the template look like
+- What does the page feel like
+- Must choose colors: foreground, background
+- Must chose font sizes
+- Must choose fonts
+- What else?
+- Caution: with all these properties, order them in alphabetical order so it is easier to find them
+
+Concepts
+- Cascading "Redundancy"
+- Commenting /* ... */
+- Universal Selector: * { property:value; }
+- Single Selector Example: h1 { color: rgb(22, 34, 88); }
+- Multiple Selectors Example: h1, h2, p { property:value; }
+- CLASSES or Common IDs
+- Multiple element.class, similar to VENN or EULER Diagram
+  Example:
+  All books are Georgia font
+  Domestic are one colour font, foreign are another colour font
+  Example Code in .html:
+  <h1 class="book domestic">The Way of the Deep</h1>
+  <h1 class="book foreign">A Night in the Sky</h1>
+  Example Code in .css
+  .book { font-family: Georgia, serif; }
+  .domestic { font-color: #0902CC; }
+  .foreign { font-color: #B097DD; }
+
+Formatting Properties (property:value;)
+- color: rgb(0-255,0-255,0-255) | hexidecimal | named | transparent
+  color: rgba(0-255, 0-255, 0-255, 0-<1)
+  For CSS3: color: hsl (0-255, %, %);
+            color: hsla (0-255, %, %, 0-<1);
+- background-color: [same as color]
+- background-image: url("/") | "[FileName.Extension]"
+  background-repeat: [ repeat | repeat-x | repeat-y | no-repeat (must be positioned) ]
+  background-position: [ paired-word position: (left | center | right) (top | center | bottom) ];
+    Caution: if only one value is used, default 2nd value is CENTER
+  Example Shorthand: body { background: url("#") no-repeat right center; }
+    Note: background image, repetition, and position (possible 4-word), in that order
+- CAUTION: Loading fonts example
+  In .html
+  <head><link href=" https://fonts.googleapis.com/css?family=Roboto:100" type="text/css" rel="stylesheet"></head>
+  In .css
+  h1 { font-family: Roboto, Georgia, serif; }
+- font-family: [main], [alternate], [ (default browser font with) serif | sans serif]
+- font: font-style | font-variant | font-weight | font-size/line-height | font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
+  font-style: normal|italic|oblique
+  font-variant: normal|small-caps
+  font-weight: [normal|bold|bolder|lighter] | [ (100 - 900; 400 is normal, 700 is bold) px] 
+  font-size: [medium|xx-small|x-small|small|large|x-large|xx-large|smaller|larger] | [px | em | %];
+- More Advanced Font Properties
+  line-height (extra space above letters): normal| [whole number mutliple for font-size] | [px | em | %]
+  word-spacing (horizontal spacing between words): normal | [ +px | -px | em | % | cm ]
+  letter-spacing (spacing between letters): normal | [ +px | -px | em | % | cm ]
+  text-transform (text can appear in all upper or all lower case for emphsis and changed easily,
+                  but origonally written normally so web-developer can read it,
+                  or, typed once but represented differently on different pages)
+  text-transform: none | capitalize | uppercase | lowercase
+  text-align: left | right | center | justify
+- Loading Images
+  Preparation: http://webresizer.com/ and has API
+  In .html
+  <img scr="[URL] | [File.Extension]" alt="[URL] | [File.Extension]" alt="TEXT" >
+    Note: creates in-line formating
+    Example: <img src="sm1iley.gif" alt="Smiley face" width="42" height="42">
+  In .css
+  align="left|right|middle|top|bottom"
+  border: [style, thickness, and color] OR [thickness, style, and color] /* which one is correct */
+  border-radius: px | %
+  padding (inside element, possible 4-item combination): [ px | pt | em | cm  | % ]
+  width: [ px | pt | em | cm  | % ]
+  height: [ px | pt | em | cm  | % ]
+  display: block; (note: must be block for CENTER img)
+  position: static | absolute | fixed | relative | sticky
+  margin (outside element, possible 4-item combination): px | pt | em | % | cm | auto
+  background-size: [ cover | contain ]
+  background-attachment: [ scroll | fixed ]
+  background-image: -webkit-linear-gradient( HexColourFrom, HexColourTo ] )
+- Advanced Combinations
+  Scaling Browser Sizes: [ max-width:100% ; hieght:auto; ]
+    As browser window decreases or increases, width=element, height=scaled
+  Centering an Image: [display: block; margin:auto; width:50% ]
+  Text on an Image: .container  [ position: relative; ]
+                    .text  [ position:absolute; top:8px; left:16px; font-size:18px; ]
+                    .img [ width: 100%; height: auto; opacity: 0.3; ]
+  Creating a Full Height Image: body, html { height: 100%; margin: 0;}
+                                .bg { /* The image used */ background-image: url("");
+                                      /* Full height */ height: 100%; 
+                                      /* Center and scale the image nicely */
+                                       background-position: center;
+                                       background-repeat: no-repeat;
+                                       background-size: cover;
+                                    }
+  Creating a Half Height Image: change only height:100% to height 50%
+  Changing Links: link, visited, hover, active
+    <style>
+      a:link { color: green; background-color: transparent; text-decoration: none; }
+      a:visited { color: pink; background-color: transparent; text-decoration: none; }
+      a:hover { color: red; background-color: transparent; text-decoration: underline; }
+      a:active { color: yellow; background-color: transparent; text-decoration: underline; }
+    </style>
+    <body>
+      <p>You can change the default colors of links</p>
+      <a href="html_images.asp" target="_blank">HTML Images</a> 
+    </body>
+- Advanced Images: must load mulitple images and play with these scripts to see the layout
+  position: [ static | relative | absolute | fixed ]
+    - works with ofset properties: top, bottom, left right
+  z-index: [number 0 - ?} /* Numbers layers */
+  float: [ left | right ]
+  clear: [ left | right | both | none ]
