@@ -1,7 +1,7 @@
 # CSS Notes and Lessons
 Inline, Styles in HTML, .CSS File
 
-**UNDER CONSTRUCTION**
+**UNDER CONSTRUCTION**: I have copied and *borrowed* from various sources and am working out the details as I proceed.
 
 ---
 
